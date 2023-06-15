@@ -12,8 +12,15 @@ subprojects{
     }
 }
 
-
 allprojects {
+    java {
+        toolchain {
+            languageVersion.set(JavaLanguageVersion.of(20))
+        }
+        sourceCompatibility = JavaVersion.VERSION_20
+        targetCompatibility = JavaVersion.VERSION_20
+
+    }
     dependencies {
         implementation("org.projectlombok:lombok:1.18.26")
         implementation("org.javatuples:javatuples:1.2")
